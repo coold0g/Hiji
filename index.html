@@ -74,6 +74,10 @@
       cursor: pointer;
     }
 
+     .subtablink:hover {
+       background-color: #3d3d3d;
+    }
+
     .subtablink.active {
       background-color: #10a37f;
       color: white;
@@ -130,6 +134,51 @@
       border-radius: 10px;
       user-select: none;
     }
+   .scenario-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+   .scenario-gallery img {
+     max-width: 300px;
+     border-radius: 8px;
+     flex-shrink: 0;
+    }
+
+   .storyboard-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    }
+
+  .storyboard-gallery img {
+    max-width: 300px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    }
+ .photo-with-caption {
+    max-width: 300px;
+    margin: 0 10px;
+    text-align: center;
+    flex-shrink: 0;
+    }
+
+  .photo-with-caption img {
+    width: 100%;
+    border-radius: 8px;
+    }
+
+  .photo-with-caption p {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 8px;
+    line-height: 1.5;
+    }
+
+
   </style>
 </head>
 <body>
