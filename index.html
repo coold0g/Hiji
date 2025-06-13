@@ -72,7 +72,7 @@
       color: white;
     }
 
-    .sub-tab-content {
+    .sub-tab-content, inner-tab-content {
       display: none;
       background-color: rgba(255, 255, 255, 0.08);
       color: #f0f0f0;
@@ -83,7 +83,8 @@
       backdrop-filter: blur(8px);
     }
 
-    .sub-tab-content.active {
+    .sub-tab-content.active,
+    .inner-tab-content.active {
       display: block;
     }
 
@@ -338,6 +339,20 @@
       document.getElementById(tabId).classList.add('active');
       evt.currentTarget.classList.add('active');
     }
+
+   function openSubTab(evt, subTabId) {
+    document.querySelectorAll('.sub-tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.subtablink').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(subTabId).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
+
+   function openInnerTab(evt, innerId) {
+    document.querySelectorAll('.inner-tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.innertablink').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(innerId).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
 
     function openSubTab(evt, subTabId) {
       const subTabs = document.querySelectorAll('.sub-tab-content');
