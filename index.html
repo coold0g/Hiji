@@ -18,17 +18,17 @@
       background-color: #1e1e1e;
       padding: 10px;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .tablink {
       padding: 10px 20px;
+      margin: 5px;
       border: none;
+      border-radius: 5px;
       background-color: #2c2c2c;
       color: #eee;
       cursor: pointer;
-      font-size: 16px;
-      border-radius: 5px;
-      margin: 0 5px;
     }
 
     .tablink.active {
@@ -45,26 +45,33 @@
       display: block;
     }
 
+    .scroll-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px 0;
+    }
+
+    .scroll-gallery img {
+      max-height: 400px;
+      border-radius: 10px;
+    }
+
     .sub-tab-menu {
       display: flex;
       flex-wrap: wrap;
-      gap: 5px;
+      gap: 8px;
       margin-top: 20px;
     }
 
     .subtablink {
-      padding: 10px 18px;
+      padding: 8px 16px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       background-color: #2c2c2c;
-      color: #eeeeee;
+      color: #eee;
       font-size: 14px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .subtablink:hover {
-      background-color: #3d3d3d;
     }
 
     .subtablink.active {
@@ -72,63 +79,37 @@
       color: white;
     }
 
-    .sub-tab-content, inner-tab-content {
+    .sub-tab-content {
       display: none;
-      background-color: rgba(255, 255, 255, 0.08);
-      color: #f0f0f0;
-      padding: 20px;
-      border-radius: 12px;
       margin-top: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      backdrop-filter: blur(8px);
     }
 
-    .sub-tab-content.active,
-    .inner-tab-content.active {
+    .sub-tab-content.active {
       display: block;
-    }
-
-    #scenario {
-      background-color: white;
-      color: black;
-      padding: 20px;
-      border-radius: 10px;
-      user-select: none;
-    }
-
-    .storyboard img {
-      max-width: 100%;
-      margin-bottom: 10px;
-    }
-
-    .refmovie-item {
-      margin-bottom: 20px;
     }
 
     .refmovie-item img {
       width: 100%;
-      max-width: 500px;
-      border-radius: 8px;
+      max-width: 600px;
+      border-radius: 10px;
       display: block;
+      margin-bottom: 10px;
     }
 
     .refmovie-item p {
-      margin-top: 8px;
       font-size: 14px;
-      color: #cccccc;
+      color: #ccc;
     }
 
     .video-gallery {
       display: flex;
       overflow-x: auto;
       gap: 20px;
-      padding: 10px 0;
+      padding-bottom: 10px;
     }
 
     .video-item {
       min-width: 300px;
-      flex-shrink: 0;
-      text-align: center;
     }
 
     .video-item video {
@@ -137,67 +118,31 @@
     }
 
     .video-item p {
-      margin-top: 8px;
+      text-align: center;
       font-size: 14px;
-      color: #cccccc;
-    }
-    .scenario-gallery {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 10px 0;
+      color: #ccc;
     }
 
-   .scenario-gallery img {
-     max-width: 300px;
-     border-radius: 8px;
-     flex-shrink: 0;
+    .scenario-box {
+      background-color: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      user-select: none;
     }
-
-   .storyboard-gallery {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 10px 0;
-    }
-
-  .storyboard-gallery img {
-    max-width: 300px;
-    border-radius: 8px;
-    flex-shrink: 0;
-    }
-
-  .photo-with-caption {
-    max-width: 300px;
-    margin: 0 10px;
-    text-align: center;
-    flex-shrink: 0;
-    }
-
-  .photo-with-caption img {
-    width: 100%;
-    border-radius: 8px;
-    }
-
-  .photo-with-caption p {
-    font-size: 14px;
-    color: #ccc;
-    margin-top: 8px;
-    line-height: 1.5;
-    }
-
-
   </style>
 </head>
 <body>
-  <h1 style="text-align:center">제작반 실습 영화 [운동장] </h1>
 
-  <div class="tab-menu">
-    <button class="tablink active" onclick="openTab(event, 'scenario')">시나리오</button>
-    <button class="tablink" onclick="openTab(event, 'storyboard')">스토리보드</button>
-    <button class="tablink" onclick="openTab(event, 'schedule')">촬영계획표</button>
-    <button class="tablink" onclick="openTab(event, 'pitch')">피칭자료</button>
-  </div>
+<h1 style="text-align:center;">제작반 실습 영화 [운동장]</h1>
+
+<div class="tab-menu">
+  <button class="tablink active" onclick="openTab(event, 'scenario')">시나리오</button>
+  <button class="tablink" onclick="openTab(event, 'storyboard')">스토리보드</button>
+  <button class="tablink" onclick="openTab(event, 'location')">로케이션 답사지</button>
+  <button class="tablink" onclick="openTab(event, 'schedule')">촬영계획표</button>
+  <button class="tablink" onclick="openTab(event, 'pitch')">피칭자료</button>
+</div>
 
   <div id="scenario" class="tab-content active">
   <div class="scenario-gallery">
@@ -209,7 +154,7 @@
   </div>
 </div>
 
-  <div id="storyboard" class="tab-content storyboard">
+<div id="storyboard" class="tab-content storyboard">
   <div class="storyboard-gallery">
   <a href="운동장 스토리보드.pdf" target="_blank">📄 스토리보드 PDF 열기</a>
     <img src="운동장 스토리보드_page-0001.jpg" alt="1장">
@@ -237,39 +182,28 @@
   </div>
 </div>
 
-
 <div id="pitch" class="tab-content">
   <div class="sub-tab-menu">
-    <button class="subtablink" onclick="openSubTab(event, 'intent')">제작의도</button>
-    <button class="subtablink" onclick="openSubTab(event, 'entire')">레퍼런스 발표 자료</button>
-    <button class="subtablink active" onclick="openSubTab(event, 'refmovie')">레퍼런스 영화</button>
+    <button class="subtablink active" onclick="openSubTab(event, 'intent')">제작의도</button>
+    <button class="subtablink" onclick="openSubTab(event, 'refmovie')">레퍼런스 영화</button>
     <button class="subtablink" onclick="openSubTab(event, 'refscene')">레퍼런스 장면</button>
     <button class="subtablink" onclick="openSubTab(event, 'refvideo')">레퍼런스 영상</button>
+    <button class="subtablink" onclick="openSubTab(event, 'pitchpdf')">발표자료</button>
   </div>
 
- <div id="entire" class="sub-tab-content">
-  <a href="프로덕션 피칭용_운동장(사이트ver.).pdf" target="_blank">📄 프로덕션 피칭용_운동장(사이트ver.) PDF 열기</a>
- </div>
-
-<div id="intent" class="sub-tab-content active">
-      <div class="inner-tab-menu">
-        <button class="innertablink active" onclick="openInnerTab(event, 'theme')">제작의도</button>
-      </div>
-      <div id="theme" class="inner-tab-content active">
-        <p>제작 의도 
-              인간은 타인의 말과 행동에 쉽게 영향을 받는 존재이다. 
+  <div id="intent" class="sub-tab-content active">
+    <p> 인간은 타인의 말과 행동에 쉽게 영향을 받는 존재이다. 
               이러한 영향은 때로는 상처로, 때로는 사랑과 위로를 준다. 
               이번 이야기는 타인에게 받은 상처가 있음에도 불구하고, 
               또 다른 타인에게는 따뜻함을 건 낼 수 있는 인간의 아이러니한 모습을 담고자 한다. 
               감정은 고립된 개인 안에서만 머무는 것이 아니라 끊임없이 관계를 통해 전이되고 순환된다. 
               타인에게 영향을 받고 또 누군가에게 영향을 주며 살아가는, 그런 우리가 공감할 수 있는 이야기를 전하고 싶다.
-        </p>
-     </div>
+      </p>
+  </div>
 
   <div id="refmovie" class="sub-tab-content">
     <div class="refmovie-item">
-      <img src="신기록 포스터.png" alt="신기록 포스터" style="max-width:100%; border-radius:10px;">
-      <p>
+      <img src="신기록 포스터.png" alt="신기록 포스터">
       <strong>시놉시스</strong><br>
         한 겨울, 집 근처 운동장에서 경찰 공무원 체력시험을 준비하는 소진은 철봉에 매달려 있는 현숙이 신경 쓰인다.
       </p>
@@ -286,10 +220,10 @@
       </p>
     </div>
 
+
     <div class="refmovie-item">
-      <img src="오후 3시, 봄날 포스터.webp" alt="오후 3시, 봄날" style="max-width:100%; border-radius:10px;">
-   <p>  
-    <strong>시놉시스</strong><br>
+      <img src="오후 3시, 봄날 포스터.webp" alt="오후 3시, 봄날">
+     <strong>시놉시스</strong><br>
     사람들이 이동을 위해 잠시 머무는 지하철역, 조송과 남득은 지하철도 타지 않고 느긋하다.
   </p>
   <p>
@@ -307,51 +241,48 @@
     </div>
 
   <div id="refscene" class="sub-tab-content">
-    <img src="vibe.png" alt="vibe" style="max-width:100%; border-radius:10px; display:block;">
-    <img src="scene.PNG" alt="scene" style="max-width:100%; border-radius:10px; display:block;">
+    <img src="색감.png" alt="색감">
+    <img src="장면.PNG" alt="장면" style="margin-top:10px;">
+    <p style="text-align:center; margin-top:10px;">색보정 및 톤 참고용 장면</p>
   </div>
 
   <div id="refvideo" class="sub-tab-content">
-    <div style="display:flex; overflow-x:auto; gap:20px;">
-      <div style="min-width:300px;">
-        <video src="reference1.mp4" controls style="width:100%; border-radius:10px;"></video>
-        <p style="text-align:center;">장면 중 '하늘'의 행동 레퍼런스 영상입니다.</p>
+    <div class="video-gallery">
+      <div class="video-item">
+        <video src="reference1.mp4" controls></video>
+        <p>'하늘'의 행동 레퍼런스 영상입니다.</p>
       </div>
-      <div style="min-width:300px;">
-        <video src="reference2.mp4" controls style="width:100%; border-radius:10px;"></video>
-        <p style="text-align:center;">S#5에서 '하늘'과 '미소'가 인사를 나누는 장면에 대한 레퍼런스 영상입니다.</p>
+      <div class="video-item">
+        <video src="reference2.mp4" controls></video>
+        <p>S#5에서 '하늘'과 '미소'가 인사를 나누는 장면에 대한 레퍼런스 영상입니다.</p>
       </div>
     </div>
   </div>
+
+  <div id="pitchpdf" class="sub-tab-content">
+    <p><a href="프로덕션 피칭용_운동장(사이트ver.).pdf" target="_blank">📄 프로덕션 피칭용_운동장(사이트ver.) PDF 열기</a>
+</p>
+  </div>
 </div>
-  
-  <script>
-    function openTab(evt, tabId) {
-      const tabContents = document.querySelectorAll('.tab-content');
-      const tabLinks = document.querySelectorAll('.tablink');
-      tabContents.forEach(tab => tab.classList.remove('active'));
-      tabLinks.forEach(btn => btn.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      evt.currentTarget.classList.add('active');
-    }
 
-    function openSubTab(evt, subTabId) {
-      const subTabs = document.querySelectorAll('.sub-tab-content');
-      const subTabBtns = document.querySelectorAll('.subtablink');
-      subTabs.forEach(tab => tab.classList.remove('active'));
-      subTabBtns.forEach(btn => btn.classList.remove('active'));
-      document.getElementById(subTabId).classList.add('active');
-      evt.currentTarget.classList.add('active');
-    }
+<script>
+  function openTab(evt, tabId) {
+    const tabContents = document.querySelectorAll('.tab-content');
+    const tabLinks = document.querySelectorAll('.tablink');
+    tabContents.forEach(t => t.classList.remove('active'));
+    tabLinks.forEach(b => b.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
 
-   function openInnerTab(evt, innerId) {
-      const innerTabs = document.querySelectorAll('.inner-tab-content');
-      const innerBtns = document.querySelectorAll('.innertablink');
-      innerTabs.forEach(tab => tab.classList.remove('active'));
-      innerBtns.forEach(btn => btn.classList.remove('active'));
-      document.getElementById(innerId).classList.add('active');
-      evt.currentTarget.classList.add('active');
-    }
-  </script>
+  function openSubTab(evt, subTabId) {
+    const subContents = document.querySelectorAll('.sub-tab-content');
+    const subLinks = document.querySelectorAll('.subtablink');
+    subContents.forEach(s => s.classList.remove('active'));
+    subLinks.forEach(b => b.classList.remove('active'));
+    document.getElementById(subTabId).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
+</script>
 </body>
 </html>
