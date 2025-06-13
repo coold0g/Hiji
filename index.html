@@ -231,14 +231,15 @@
 <div id="schedule" class="tab-content">
   <div class="schedule-gallery" style="display: flex; flex-direction: column; gap: 20px;">
     <!-- PDF 다운로드 링크 -->
-    <a href="운동장 일일촬영계획표.pdf" target="_blank" style="color: #10a37f;">📄 일일촬영계획표 PDF 열기</a>
-    <img src="일일촬영계획표.PNG" alt="일일촬영계획표" style="max-width: 100%; border-radius: 10px;">
+    <a href="일일촬영계획표.pdf" target="_blank" style="color: #10a37f;">📄 일일촬영계획표 PDF 열기</a>
+    <img src="일일촬영계획표(사이트ver.).PNG" alt="일일촬영계획표" style="max-width: 100%; border-radius: 10px;">
   </div>
 </div>
 
 
   <div id="pitch" class="tab-content">
     <div class="sub-tab-menu">
+      <button class="subtablink" onclick="openSubTab(event, 'entire')">레퍼런스 발표 자료</button>
       <button class="subtablink" onclick="openSubTab(event, 'intent')">제작의도</button>
       <button class="subtablink" onclick="openSubTab(event, 'refmovie')">레퍼런스 영화</button>
       <button class="subtablink" onclick="openSubTab(event, 'refscene')">레퍼런스 장면</button>
@@ -246,6 +247,11 @@
     </div>
  <div>
 
+ <div id="entire" class="sub-tab-content">
+ <div class="entire">
+  <a href="프로덕션 피칭용_운동장(사이트ver.).pdf" target="_blank">📄 프로덕션 피칭용_운동장(사이트ver.) PDF 열기</a>
+ </div>
+      
     <div id="intent" class="sub-tab-content">
       <div class="inner-tab-menu">
         <button class="innertablink active" onclick="openInnerTab(event, 'theme')">주제 및 메시지</button>
@@ -309,24 +315,29 @@
     <div id="refscene" class="sub-tab-content">
       <p>레퍼런스 장면 내용 입력</p>
     </div>
+ <div id="refmovie" class="sub-tab-content">
+  <div class="refmovie-gallery" style="display: flex; overflow-x: auto; gap: 20px;">
+</div>    
+    <div class="photo-with-caption">
+      <img src="레퍼_언니유정_조명.png" alt="언니유정_조명">
+      <img src="레퍼_언니유정_장면.png" alt="언니유정_장면">
+
+
+
 
     <div id="refvideo" class="sub-tab-content">
       <div class="video-gallery">
         <div class="video-item">
-          <video src="reference1.mp4" controls></video>
-          <p>레퍼런스 영상 1 설명입니다.</p>
-        </div>
-        <div class="video-item">
+          <video src="레퍼런스 영상.mp4" controls></video>
+          <p>장면 중 '하늘'의 행동 레퍼런스 영상입니다.</p>
+      <div class="video-item">
           <video src="reference2.mp4" controls></video>
           <p>레퍼런스 영상 2 설명입니다.</p>
         </div>
-        <div class="video-item">
-          <video src="reference3.mp4" controls></video>
-          <p>레퍼런스 영상 3 설명입니다.</p>
         </div>
       </div>
-    </div>
-  </div>
+   </div>
+
 
   <script>
     function openTab(evt, tabId) {
