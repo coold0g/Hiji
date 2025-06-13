@@ -238,21 +238,20 @@
 </div>
 
 
-  <div id="pitch" class="tab-content">
-    <div class="sub-tab-menu">
-      <button class="subtablink" onclick="openSubTab(event, 'entire')">레퍼런스 발표 자료</button>
-      <button class="subtablink" onclick="openSubTab(event, 'intent')">제작의도</button>
-      <button class="subtablink" onclick="openSubTab(event, 'refmovie')">레퍼런스 영화</button>
-      <button class="subtablink" onclick="openSubTab(event, 'refscene')">레퍼런스 장면</button>
-      <button class="subtablink" onclick="openSubTab(event, 'refvideo')">레퍼런스 영상</button>
-    </div>
- </div>
+<div id="pitch" class="tab-content">
+  <div class="sub-tab-menu">
+    <button class="subtablink" onclick="openSubTab(event, 'intent')">제작의도</button>
+    <button class="subtablink" onclick="openSubTab(event, 'entire')">레퍼런스 발표 자료</button>
+    <button class="subtablink active" onclick="openSubTab(event, 'refmovie')">레퍼런스 영화</button>
+    <button class="subtablink" onclick="openSubTab(event, 'refscene')">레퍼런스 장면</button>
+    <button class="subtablink" onclick="openSubTab(event, 'refvideo')">레퍼런스 영상</button>
+  </div>
 
  <div id="entire" class="sub-tab-content">
   <a href="프로덕션 피칭용_운동장(사이트ver.).pdf" target="_blank">📄 프로덕션 피칭용_운동장(사이트ver.) PDF 열기</a>
  </div>
-      
-    <div id="intent" class="sub-tab-content">
+
+<div id="intent" class="sub-tab-content">
       <div class="inner-tab-menu">
         <button class="innertablink active" onclick="openInnerTab(event, 'theme')">제작의도</button>
       </div>
@@ -266,15 +265,13 @@
               타인에게 영향을 받고 또 누군가에게 영향을 주며 살아가는, 그런 우리가 공감할 수 있는 이야기를 전하고 싶다.
         </p>
      </div>
- 
-   <div id="refmovie" class="sub-tab-content">
-  <div class="refmovie-gallery" style="display: flex; overflow-x: auto; gap: 20px;">
-</div>    
-    
-   <div class="photo-with-caption">
-      <img src="신기록 포스터.png" alt="신기록">
+
+  <!-- 레퍼런스 영화 -->
+  <div id="refmovie" class="sub-tab-content active">
+    <div class="refmovie-item">
+      <img src="신기록 포스터.png" alt="신기록 포스터" style="max-width:100%; border-radius:10px;">
       <p>
-        <strong>시놉시스</strong><br>
+      <strong>시놉시스</strong><br>
         한 겨울, 집 근처 운동장에서 경찰 공무원 체력시험을 준비하는 소진은 철봉에 매달려 있는 현숙이 신경 쓰인다.
       </p>
       <p>
@@ -290,12 +287,11 @@
       </p>
     </div>
 
-  <div class="photo-with-caption">
-  <img src="오후 3시, 봄날 포스터.webp" alt="오후 3시, 봄날 포스터">
-  <p>
+    <div class="refmovie-item">
+      <img src="오후 3시, 봄날 포스터.webp" alt="오후 3시, 봄날" style="max-width:100%; border-radius:10px;">
+   <p>  
     <strong>시놉시스</strong><br>
-    사람들이 이동을 위해 잠시 머무는 지하철역,<br>
-    조송과 남득은 지하철도 타지 않고 느긋하다.
+    사람들이 이동을 위해 잠시 머무는 지하철역, 조송과 남득은 지하철도 타지 않고 느긋하다.
   </p>
   <p>
     <strong>줄거리</strong><br>
@@ -308,24 +304,26 @@
     서로 이해하지 않는 이들 간의 벽이 존재함과 그 벽을 한방에 날려버리는 순간을 독특한 대화법으로 간결하고 재미있게 그린 작품이다.<br>
     <em>(출처 – 박광수)</em>
   </p>
-</div>
+ </div>
 
- <div id="refscene" class="sub-tab-content">
-    <img src="색감.png" alt="언니유정_색감" style="width:100%;max-width:800px;display:block;margin:auto;">
-    <img src="장면.PNG" alt="언니유정_장면" style="width:100%;max-width:800px;display:block;margin:auto;">
-</div>
-
-  <div id="refvideo" class="sub-tab-content">
-      <div class="video-gallery">
-       <div class="video-item">
-         <video src="reference1.mp4" controls></video>
-         <p>장면 중 '하늘'의 행동 레퍼런스 영상입니다.</p>
+  <!-- 레퍼런스 장면 -->
+  <div id="refscene" class="sub-tab-content">
+    <img src="색감.png" alt="색감" style="max-width:100%; border-radius:10px; display:block; margin-bottom:10px;">
+    <img src="장면.PNG" alt="장면" style="max-width:100%; border-radius:10px; display:block;">
   </div>
-      <div class="video-item">
-        <video src="reference2.mp4" controls></video>
-          <p>S#5에서 '하늘'과 '미소'가 인사를 나누는 장면에 대한 레퍼런스 영상입니다.</p>
-       </div>
-     </div>
+
+  <!-- 레퍼런스 영상 -->
+  <div id="refvideo" class="sub-tab-content">
+    <div style="display:flex; overflow-x:auto; gap:20px;">
+      <div style="min-width:300px;">
+        <video src="reference1.mp4" controls style="width:100%; border-radius:10px;"></video>
+        <p style="text-align:center;">장면 중 '하늘'의 행동 레퍼런스 영상입니다.</p>
+      </div>
+      <div style="min-width:300px;">
+        <video src="reference2.mp4" controls style="width:100%; border-radius:10px;"></video>
+        <p style="text-align:center;">S#5에서 '하늘'과 '미소'가 인사를 나누는 장면에 대한 레퍼런스 영상입니다.</p>
+      </div>
+    </div>
   </div>
 </div>
   
