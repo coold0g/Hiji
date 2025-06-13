@@ -265,7 +265,6 @@
               감정은 고립된 개인 안에서만 머무는 것이 아니라 끊임없이 관계를 통해 전이되고 순환된다. 
               타인에게 영향을 받고 또 누군가에게 영향을 주며 살아가는, 그런 우리가 공감할 수 있는 이야기를 전하고 싶다.
         </p>
-       </div>
      </div>
  
    <div id="refmovie" class="sub-tab-content">
@@ -340,20 +339,6 @@
       evt.currentTarget.classList.add('active');
     }
 
-   function openSubTab(evt, subTabId) {
-    document.querySelectorAll('.sub-tab-content').forEach(tab => tab.classList.remove('active'));
-    document.querySelectorAll('.subtablink').forEach(btn => btn.classList.remove('active'));
-    document.getElementById(subTabId).classList.add('active');
-    evt.currentTarget.classList.add('active');
-  }
-
-   function openInnerTab(evt, innerId) {
-    document.querySelectorAll('.inner-tab-content').forEach(tab => tab.classList.remove('active'));
-    document.querySelectorAll('.innertablink').forEach(btn => btn.classList.remove('active'));
-    document.getElementById(innerId).classList.add('active');
-    evt.currentTarget.classList.add('active');
-  }
-
     function openSubTab(evt, subTabId) {
       const subTabs = document.querySelectorAll('.sub-tab-content');
       const subTabBtns = document.querySelectorAll('.subtablink');
@@ -363,7 +348,7 @@
       evt.currentTarget.classList.add('active');
     }
 
-    function openInnerTab(evt, innerId) {
+   function openInnerTab(evt, innerId) {
       const innerTabs = document.querySelectorAll('.inner-tab-content');
       const innerBtns = document.querySelectorAll('.innertablink');
       innerTabs.forEach(tab => tab.classList.remove('active'));
